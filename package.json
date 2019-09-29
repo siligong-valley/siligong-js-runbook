@@ -3,7 +3,8 @@
     "version": "1.0.0",
     "description": "",
     "dependencies": {
-        "mdx-deck": "^3.0.13"
+        "mdx-deck": "^3.0.13",
+        "styled-components": "^4.4.0"
     },
     "devDependencies": {},
     "scripts": {
