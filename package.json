@@ -1,0 +1,23 @@
+{
+    "name": "siligong-valley-runbook",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "dependencies": {
+        "mdx-deck": "^3.0.13"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "start": "mdx-deck deck.mdx"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/siligong-valley/siligong-js-runbook.git"
+    },
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/siligong-valley/siligong-js-runbook/issues"
+    },
+    "homepage": "https://github.com/siligong-valley/siligong-js-runbook#readme"
+}
