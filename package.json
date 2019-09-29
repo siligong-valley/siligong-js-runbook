@@ -2,13 +2,12 @@
     "name": "siligong-valley-runbook",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
     "dependencies": {
         "mdx-deck": "^3.0.13"
     },
     "devDependencies": {},
     "scripts": {
-        "start": "mdx-deck deck.mdx"
+        "start": "mdx-deck ./src/index.mdx"
     },
     "repository": {
         "type": "git",
