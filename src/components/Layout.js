@@ -1,9 +1,26 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
+import theme from '../theme'
+import SlideHeading from './SlideHeading'
 
-const Wrapper = styled.section`
+const ParentWrapper = styled.div`
     width: 100%;
     height: 100%;
+
+    display: flex;
+    flex-direction: column;
+`
+
+const Header = styled.header`
+    width: 100%;
+
+    display: flex;
+
+`
+
+const ChildrenWrapper = styled.section`
+    width: 100%;
+    flex-grow: 1;
 
     display: flex;
     flex-direction: column;
@@ -11,8 +28,17 @@ const Wrapper = styled.section`
     align-items: center;
 `
 
-export default ({ children }) => (
-    <Wrapper>
-        {children}
-    </Wrapper>
+export default ({ heading, children }) => (
+    <ThemeProvider theme={theme}>
+        <ParentWrapper>
+            <Header>
+                <SlideHeading>
+                    {heading}
+                </SlideHeading>
+            </Header>
+            <ChildrenWrapper>
+                {children}
+            </ChildrenWrapper>
+        </ParentWrapper>
+    </ThemeProvider>
 )
