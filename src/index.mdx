@@ -5,11 +5,13 @@ import List from './components/List'
 import Presenters from './components/Presenters'
 import presenters from './data/presenters'
 import mdxDeckTheme from './mdxDeckTheme'
+import setUpChecklist from './data/setUpChecklist'
 
 export const theme = mdxDeckTheme
 
 <Layout heading="Set up checklist">
-
+    <List 
+        items={setUpChecklist} />
 </Layout>
 
 ---
