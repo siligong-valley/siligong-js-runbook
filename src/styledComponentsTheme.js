@@ -1,18 +1,25 @@
 const baseColors = {
     black: ['black'],
-    white: ['white']
+    white: [
+        'white',
+        `#E4E4E4`
+    ]
 }
 
 export default {
     color: {
         ...baseColors,
-        text: {
-            primary: baseColors.black[0]
-        },
-        background: {
-            primary: baseColors.white[0]
-        }
+        text: [
+            ...baseColors.black
+        ],
+        background: [
+            ...baseColors.white
+        ],
+        javaScriptYellow: `#F0DB4F`
     },
+    fontFamily: [
+        `monospace`
+    ],
     fontSize: [
         "12.8px",
         "16px",

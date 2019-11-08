@@ -1,6 +1,7 @@
 import theme from "./theme";
 import mdxTheme from 'mdx-deck/themes'
 
+// this is having no effect, needing to reset each components styles as workaround
 export default {
     ...mdxTheme,
     css: {
@@ -9,13 +10,10 @@ export default {
 
         boxSizing: 'border-box',
         color: 'inherit',
-        fontWeight: 300,
-        lineHeight: 1.333,
-        fontSize: '16px',
     },
     colors: {
         ...theme.colors,
-        text: theme.color.text.primary,
-        background: theme.color.background.primary,
+        text: theme.color.text[0],
+        background: theme.color.background[0],
     }
 }

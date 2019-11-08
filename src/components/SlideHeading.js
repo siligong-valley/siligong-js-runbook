@@ -8,8 +8,7 @@ export default styled.h1`
     left: 50%;
     transform: translate(-50%, -50%);
 
-    font-family: Arial, Helvetica, sans-serif;
     font-size: ${p => p.theme.fontSize[5]};
-    font-weight: 700;
     line-height: 1.333;
+    font-weight: 400;
 `

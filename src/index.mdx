@@ -2,8 +2,9 @@ import Layout from './components/Layout'
 import Sponsors from './components/Sponsors'
 import SlideHeading from './components/SlideHeading'
 import List from './components/List'
-import Presenters from './components/Presenters'
+import Presentions from './components/Presentions'
 import presenters from './data/presenters'
+import sponsors from './data/sponsors'
 import mdxDeckTheme from './mdxDeckTheme'
 import setUpChecklist from './data/setUpChecklist'
 
@@ -16,8 +17,24 @@ export const theme = mdxDeckTheme
 
 ---
 
-<Layout heading="Tonight's presenters">
-    <Presenters presenters={presenters} />
+<Layout heading="Tonight's Presentions">
+    <Presentions 
+        presentations={[
+            {
+                title: `React Hooks`,
+                presenter: presenters.chrisParton
+            }
+        ]} />
+</Layout>
+
+---
+
+<Layout heading="Community">
+    <List 
+        items={[
+            'where did you come from?',
+            'how did you hear about us?',
+        ]} />
 </Layout>
 
 ---
@@ -28,7 +45,10 @@ export const theme = mdxDeckTheme
 ---
 
 <Layout heading="Thank you sponsors">
-    <Sponsors />
+    <Sponsors sponsors={[
+        sponsors.accelo, 
+        {/* sponsors.easyAgile */}
+    ]}  />
 </Layout>
 
 ---
