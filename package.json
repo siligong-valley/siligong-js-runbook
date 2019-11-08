@@ -4,6 +4,7 @@
     "description": "",
     "dependencies": {
         "mdx-deck": "^3.0.13",
+        "moment": "^2.24.0",
         "styled-components": "^4.4.0"
     },
     "devDependencies": {},

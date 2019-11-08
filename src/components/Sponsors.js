@@ -1,6 +1,5 @@
 import React from 'react'
-import easyAgileLogo from '../images/sponsors/easyAgileLogo.svg'
-import { gridSquares, gridGutters } from '../util/grid'
+import { gridSquares } from '../util/grid'
 import styled from 'styled-components'
 
 const Ul = styled.ul`
