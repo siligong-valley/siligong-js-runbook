@@ -1,31 +1,32 @@
 import Layout from './components/Layout'
 import Sponsors from './components/Sponsors'
 import SlideHeading from './components/SlideHeading'
+import List from './components/List'
+import Presenters from './components/Presenters'
+import presenters from './data/presenters'
+import mdxDeckTheme from './mdxDeckTheme'
+
+export const theme = mdxDeckTheme
 
 <Layout heading="Set up checklist">
-- camera
-- food
-- ...
 
 </Layout>
 
 ---
 
-<Layout heading="Welcome to Siligong.JS">
-
-this would be a moving slide, showing welcome screen and a portrait with blurb of presenters for tonight, heading - Tonight's presenters
-
+<Layout heading="Tonight's presenters">
+    <Presenters presenters={presenters} />
 </Layout>
 
 ---
 
-<Layout heading="Thank you Presenters">
+<Layout heading="Thank you presenters">
 </Layout>
 
 ---
 
 <Layout heading="Thank you sponsors">
-<Sponsors />
+    <Sponsors />
 </Layout>
 
 ---
@@ -45,24 +46,36 @@ this would be a moving slide, showing welcome screen and a portrait with blurb o
 
 ---
 
-<Layout heading="Do you want to present">
+<Layout heading="Do you want to present?">
+    <List 
+        items={[
+            'paired presenting',
+        ]} />
 </Layout>
 
 ---
 
 <Layout heading="Community">
-- slack channel
-- website
-- ...
+    <List 
+        items={[
+            'siligong.slack.com',
+            'siligongvalley.com',
+            'meetup.com/siligongvalley'
+        ]} />
 </Layout>
 
 ---
 
 <Layout heading="Upcoming Siligong events">
-    - ensure to include next Siligong.JS date
+       <List 
+        items={[
+            'Agile Gong - Wed 9th Oct',
+            'Marketing Meetup - Thur 10th Oct',
+        ]} />
 </Layout>
 
 ---
 
-<Layout heading="Pub">
+<Layout heading="Come get a drink">
+    Howling Wolf
 </Layout>

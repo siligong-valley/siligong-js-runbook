@@ -5,6 +5,7 @@ import styled from 'styled-components'
 
 const Logo = styled.img`
     width: ${gridSquares(3)};
+    filter: grayscale(1);
 `
 
 export default () => (

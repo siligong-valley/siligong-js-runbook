@@ -1,11 +1,14 @@
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
-import theme from '../theme'
+import styledComponentsTheme from '../styledComponentsTheme'
 import SlideHeading from './SlideHeading'
+import { gridGutters } from '../util/grid'
+import siligongValleyLogo from '../images/siligongValleyLogo.svg'
 
 const ParentWrapper = styled.div`
     width: 100%;
     height: 100%;
+    padding: ${gridGutters(1)};
 
     display: flex;
     flex-direction: column;
@@ -14,8 +17,14 @@ const ParentWrapper = styled.div`
 const Header = styled.header`
     width: 100%;
 
-    display: flex;
+    position: relative;
 
+    display: flex;
+`
+
+const SiligongValleyLogo = styled.img`
+    width: ${gridGutters(4)};
+    filter: grayscale(1);
 `
 
 const ChildrenWrapper = styled.section`
@@ -29,9 +38,12 @@ const ChildrenWrapper = styled.section`
 `
 
 export default ({ heading, children }) => (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={styledComponentsTheme}>
         <ParentWrapper>
             <Header>
+                <SiligongValleyLogo
+                    src={siligongValleyLogo}
+                    alt="duck" />
                 <SlideHeading>
                     {heading}
                 </SlideHeading>
