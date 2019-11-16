@@ -42,9 +42,9 @@ const theme = {
         focus: baseColor.black[4],
         text: [...baseColor.black],
     },
-    fontFamily: {
-        primary: `Open Sans, sans-serif`,
-    },
+    fontFamily: [
+        `Courier, monospace`,
+    ],
     fontSize: [
         // https://type-scale.com/
         "12.8px",

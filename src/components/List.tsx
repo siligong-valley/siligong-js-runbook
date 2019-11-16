@@ -1,9 +1,8 @@
 import { styled } from "../theme";
 
-export default styled.section(props => `
-    width: 100%;
-    height: 100vh;
-
+export default styled.ul(props => `
     display: flex;
     flex-direction: column;
+
+    list-style: square;
 `)

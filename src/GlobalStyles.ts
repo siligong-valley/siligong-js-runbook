@@ -1,8 +1,6 @@
 import { createGlobalStyle, theme } from "./theme";
 
 const GlobalStyles = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,800&display=swap');
-
     * {
         box-sizing: border-box;
 
@@ -30,7 +28,7 @@ const GlobalStyles = createGlobalStyle`
 
     body {
         font-size: ${theme.fontSize[1]};
-        font-family: ${theme.fontFamily.primary};
+        font-family: ${theme.fontFamily[0]};
         font-weight: ${theme.fontWeight.normal};
         line-height: ${theme.lineHeight.m};
         color: ${theme.color.text[0]};
