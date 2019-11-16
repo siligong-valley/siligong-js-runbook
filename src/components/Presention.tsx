@@ -1,36 +1,40 @@
 import React, { FC } from 'react'
-import { styled, gridSquares, gridGutters } from "../theme";
+import { styled, gridGutters } from "../theme";
 import { PresenterKeyType } from '../types';
 import presenters from '../data/presenters';
+import ListItemHeading from './ListItemHeading'
 
 const Li = styled.li(props => `
     display: flex;
+    align-items: flex-start;
+
+    :not(:last-child) {
+        margin-bottom: ${gridGutters(2)};
+    }
 `)
 
 const Portrait = styled.img`
-    width: ${gridSquares(2)};
-    height: ${gridSquares(2)};
+    width: ${gridGutters(4)};
+    height: ${gridGutters(4)};
 
     object-fit: cover;
 `
 
-const TextWrapper = styled.div`
-    padding: ${gridGutters(1)} ${gridSquares(1)} ${gridGutters(1)} ${gridGutters(2)}; 
+const TextWrapper = styled.div(props => `
+    padding-left: ${gridGutters(1)};
 
     display: flex;
     flex-direction: column;
-`
+    align-items: flex-start;
+`)
 
-const Title = styled.h2`
-`
+const PresenterName = styled.h2(props => `
+    font-size: ${props.theme.fontSize[1]};
+`)
 
-const PresenterName = styled.h2`
-
-`
-
-const Job = styled.p`
-
-`
+const Job = styled.p(props => `
+    font-size: ${props.theme.fontSize[1]};
+`)
 
 export interface PresentionPropsType {
     presenter: PresenterKeyType
@@ -46,9 +50,9 @@ const Presention: FC<PresentionPropsType> = ({
                 src={presenters[presenter].portrait}
                 alt={presenters[presenter].name} />
             <TextWrapper>
-                <Title>
+                <ListItemHeading>
                     {title}
-                </Title>
+                </ListItemHeading>
                 <PresenterName>
                     by {presenters[presenter].name}
                 </PresenterName>

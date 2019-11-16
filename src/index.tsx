@@ -4,11 +4,14 @@ import { theme, ThemeProvider } from './theme';
 import GlobalStyles from './GlobalStyles';
 import slides from './slides'
 import useKeyPress from './hooks/useKeyPress';
+import ScanLines from './components/ScanLines'
 
 const App: FC = () => {
     const setNextHandler = useKeyPress(['ArrowRight']);
     const setPrevHandler = useKeyPress(['ArrowLeft']);
-    const [slide, setSlide] = useState(0)
+    // FOR TESTING
+    // const [slide, setSlide] = useState(0)
+    const [slide, setSlide] = useState(1)
     const prev = () => setSlide(currentSlide => {
         const isStart = currentSlide === 0
 
@@ -32,6 +35,7 @@ const App: FC = () => {
             <>
                 <GlobalStyles />
                 {slides[slide]}
+                <ScanLines />
             </>
         </ThemeProvider>
     )

@@ -1,24 +1,19 @@
 import React, { FC } from 'react'
-import { styled, gridGutters } from "../theme";
+import { styled } from "../theme";
 import Heading from './Heading';
 import SiligongLogo from './SiligongLogo';
-
-const HEIGHT = gridGutters(4)
+import { GridSquareColumns } from './Grid';
 
 const ParentWrapper = styled.header(props => `
     width: 100%;
-    height: ${HEIGHT};
+    position: relative;
 
     display: flex;
-    justify-content: center;
+    align-items: flex-end;
 `)
 
-const LogoWrapper = styled.div`
-    height: 100%;
-
-    position: absolute;
-    top: 0;
-    left: 0;
+const HeadingWrapper = styled.div`
+    transform: translateY(11px);
 `
 
 interface PropsType {
@@ -29,12 +24,13 @@ const Header: FC<PropsType> = ({
     heading
 }) => (
         <ParentWrapper>
-            <LogoWrapper>
-                <SiligongLogo />
-            </LogoWrapper>
-            <Heading>
-                {heading}
-            </Heading>
+            <SiligongLogo />
+            <GridSquareColumns />
+            <HeadingWrapper>
+                <Heading>
+                    {heading}
+                </Heading>
+            </HeadingWrapper>
         </ParentWrapper>
     )
 

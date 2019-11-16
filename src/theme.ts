@@ -31,16 +31,22 @@ const black = [
 
 export const baseColor = {
     black: [...black],
+    brown: [
+        `#21170C`
+    ],
     white: [...black.reverse()],
+    yellow: [
+        `#F7B915`
+    ]
 };
 
 const theme = {
     color: {
         ...baseColor,
         active: baseColor.white[1],
-        background: [...baseColor.white],
+        background: [...baseColor.brown],
         focus: baseColor.black[4],
-        text: [...baseColor.black],
+        text: [...baseColor.yellow],
     },
     fontFamily: [
         `Courier, monospace`,
@@ -62,6 +68,11 @@ const theme = {
     lineHeight: {
         m: 1.45,
     },
+    textShadow: [
+        // `0 0 8px hsla(44, 93%, 53%, 0.5), 0 0 4px hsla(44, 93%, 53%, 0.5)`
+        `0 0 5px #C8C8C8`
+    ]
+
 };
 
 type Theme = Readonly<typeof theme>;

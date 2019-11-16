@@ -10,11 +10,16 @@ import { PresenterKeyType, SponsorKeyType, BarKeyType } from './types';
 import Countdown from './components/Countdown';
 import Sponsor, { SponsorPropsType } from './components/Sponsor';
 import Bar from './components/Bar';
+import { GridSquareRows } from './components/Grid';
 
 const presentions: PresentionPropsType[] = [
     {
         presenter: PresenterKeyType.chrisParton,
         title: 'React Hooks'
+    },
+    {
+        presenter: PresenterKeyType.chrisParton,
+        title: 'React Hooks2'
     }
 ]
 
@@ -23,6 +28,16 @@ const sponsors: SponsorPropsType[] = [
         sponsor: SponsorKeyType.accelo
     }
 ]
+
+const Presentations = () => (
+    <List>
+        {presentions.map(props => (
+            <Presention
+                key={props.title}
+                {...props} />
+        ))}
+    </List>
+)
 
 export default [
     <Slide>
@@ -53,12 +68,9 @@ export default [
     <Slide>
         <Header heading="Tonight's presentations" />
         <Body>
+            <Presentations />
+            <GridSquareRows />
             <Countdown startingSeconds={100} />
-            <List>
-                {presentions.map(props => (
-                    <Presention {...props} />
-                ))}
-            </List>
         </Body>
     </Slide>,
     <Slide>
@@ -78,13 +90,18 @@ export default [
     </Slide>,
     <Slide>
         <Header heading="Thank you presenters" />
+        <Body>
+            <Presentations />
+        </Body>
     </Slide>,
     <Slide>
         <Header heading="Thank you sponsors" />
         <Body>
             <List>
-                {sponsors.map(props => (
-                    <Sponsor {...props} />
+                {sponsors.map((props, i) => (
+                    <Sponsor
+                        key={i}
+                        {...props} />
                 ))}
             </List>
         </Body>

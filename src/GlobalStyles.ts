@@ -27,12 +27,18 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        font-size: ${theme.fontSize[1]};
+        font-size: ${theme.fontSize[2]};
         font-family: ${theme.fontFamily[0]};
         font-weight: ${theme.fontWeight.normal};
         line-height: ${theme.lineHeight.m};
+
         color: ${theme.color.text[0]};
-        background: ${theme.color.background[0]};
+        text-shadow: ${theme.textShadow[0]};
+        background-color: ${theme.color.background[0]};
+        background-image: radial-gradient(
+            hsla(0, 0%, 0%, 0), 
+            hsla(0, 0%, 0%, 1) 120%
+        );
     }
 
     ul {

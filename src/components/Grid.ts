@@ -10,6 +10,11 @@ export const GridSquareColumns = styled.div<PropsType>`
     height: 100%;
 `;
 
+export const GridSquareRows = styled.div<PropsType>`
+    width: 100%;
+    height: ${p => gridSquares(p.amount || 1)};
+`;
+
 export const GridGutterColumns = styled.div<PropsType>`
     width: ${p => gridGutters(p.amount || 1)};
     height: 100%;

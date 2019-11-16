@@ -1,6 +1,6 @@
 import React, { useEffect, useState, FC } from 'react'
-import styled from 'styled-components'
 import moment from 'moment'
+import { styled } from '../theme'
 
 let intervalId: number
 
@@ -8,8 +8,11 @@ const Section = styled.section`
     width: 100%;
 
     display: flex;
-    justify-content: center;
 `
+
+const Bold = styled.em(props => `
+    font-weight: ${props.theme.fontWeight.bold};
+`)
 
 interface PropsType {
     startingSeconds: number
@@ -44,13 +47,11 @@ const Countdown: FC<PropsType> = ({
 
     const secondsAsTime = moment().startOf('day')
         .seconds(seconds)
-        .format('H:mm:ss');
+        .format('HH:mm:ss');
 
     return (
         <Section>
-            Starting in
-            <br />
-            {secondsAsTime}
+            Starting in&nbsp;<Bold>{secondsAsTime}</Bold>
         </Section>
     )
 }
