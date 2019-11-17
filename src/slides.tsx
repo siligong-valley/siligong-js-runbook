@@ -11,6 +11,8 @@ import Countdown from './components/Countdown';
 import Sponsor, { SponsorPropsType } from './components/Sponsor';
 import Bar from './components/Bar';
 import { GridSquareRows } from './components/Grid';
+import Typist from "react-typist";
+// note: custom styles for the typist cursor are included in GlobalStyles
 
 const presentions: PresentionPropsType[] = [
     {
@@ -39,30 +41,39 @@ const Presentations = () => (
     </List>
 )
 
+const typistProps = {
+    avgTypingDelay: 0.1,
+    stdTypingDelay: 0.1
+}
+// in order to get typist to work on every slide, you need to alternate call the component directly or using this HOC
+const TypeText = (props: any) => <Typist {...typistProps} {...props} />
+
 export default [
     <Slide>
         <Header heading="Set up checklist" />
         <Body>
-            <List>
-                <ListItem>
-                    order food &amp; drinks
+            <TypeText>
+                <List>
+                    <ListItem>
+                        order food &amp; drinks
                     <Deemph>
-                        previous meetup order: 8 pizzas, 3 salads (should of ordered double)
+                            previous meetup order: 8 pizzas, 3 salads (should of ordered double)
                     </Deemph>
-                </ListItem>
-                <ListItem>
-                    set up seating
-                </ListItem>
-                <ListItem>
-                    set up display
-                </ListItem>
-                <ListItem>
-                    set up camera (for recording presentions)
-                </ListItem>
-                <ListItem>
-                    update slides (presenters, sponsors, upcoming events)
-                </ListItem>
-            </List>
+                    </ListItem>
+                    <ListItem>
+                        set up seating
+                    </ListItem>
+                    <ListItem>
+                        set up display
+                    </ListItem>
+                    <ListItem>
+                        set up camera (for recording presentions)
+                    </ListItem>
+                    <ListItem>
+                        update slides (presenters, sponsors, upcoming events)
+                    </ListItem>
+                </List>
+            </TypeText>
         </Body>
     </Slide>,
     <Slide>
@@ -76,16 +87,18 @@ export default [
     <Slide>
         <Header heading="Community" />
         <Body>
-            <List>
-                {[
-                    `where did you come from?`,
-                    `how did you hear about us?`
-                ].map(item => (
-                    <ListItem key={item}>
-                        {item}
-                    </ListItem>
-                ))}
-            </List>
+            <TypeText>
+                <List>
+                    {[
+                        `where did you come from?`,
+                        `how did you hear about us?`
+                    ].map(item => (
+                        <ListItem key={item}>
+                            {item}
+                        </ListItem>
+                    ))}
+                </List>
+            </TypeText>
         </Body>
     </Slide>,
     <Slide>
@@ -118,45 +131,51 @@ export default [
     <Slide>
         <Header heading="Do you want to present?" />
         <Body>
-            <List>
-                {[
-                    `paired presenting available`,
-                ].map(item => (
-                    <ListItem key={item}>
-                        {item}
-                    </ListItem>
-                ))}
-            </List>
+            <TypeText>
+                <List>
+                    {[
+                        `paired presenting available`,
+                    ].map(item => (
+                        <ListItem key={item}>
+                            {item}
+                        </ListItem>
+                    ))}
+                </List>
+            </TypeText>
         </Body>
     </Slide>,
     <Slide>
         <Header heading="Community" />
         <Body>
-            <List>
-                {[
-                    `siligong.slack.com`,
-                    `siligongvalley.com`,
-                    `meetup.com/siligongvalley`,
-                ].map(item => (
-                    <ListItem key={item}>
-                        {item}
-                    </ListItem>
-                ))}
-            </List>
+            <Typist avgTypingDelay={0.1} stdTypingDelay={0.1}>
+                <List>
+                    {[
+                        `siligong.slack.com`,
+                        `siligongvalley.com`,
+                        `meetup.com/siligongvalley`,
+                    ].map(item => (
+                        <ListItem key={item}>
+                            {item}
+                        </ListItem>
+                    ))}
+                </List>
+            </Typist>
         </Body>
     </Slide>,
     <Slide>
         <Header heading="Upcoming Siligong events" />
         <Body>
-            <List>
-                {[
-                    `Agile Gong - Wed 9th Oct`,
-                ].map(item => (
-                    <ListItem key={item}>
-                        {item}
-                    </ListItem>
-                ))}
-            </List>
+            <TypeText>
+                <List>
+                    {[
+                        `Agile Gong - Wed 9th Oct`,
+                    ].map(item => (
+                        <ListItem key={item}>
+                            {item}
+                        </ListItem>
+                    ))}
+                </List>
+            </TypeText>
         </Body>
     </Slide>,
     <Slide>

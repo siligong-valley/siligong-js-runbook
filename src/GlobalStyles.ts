@@ -80,6 +80,31 @@ const GlobalStyles = createGlobalStyle`
     [disabled] {
         pointer-events: none;
     }
+
+    /* custom cursor for typist */
+    .Typist .Cursor {
+        width: 10px;
+        height: 1.4em;
+        background: linear-gradient(
+            to bottom, 
+            hsla(0, 0%, 0%, 0) 0%,
+            hsla(0, 0%, 0%, 0) 20%,
+            ${theme.color.text[0]} 21%,
+            ${theme.color.text[0]} 100%
+        );
+
+        display: inline-block;
+
+        &--blinking {
+            opacity: 1;
+            animation: blink 1.5s linear infinite;
+            @keyframes blink {
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+            }
+        }
+    }
 `;
 
 export default GlobalStyles;
