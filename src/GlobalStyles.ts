@@ -1,4 +1,5 @@
 import { createGlobalStyle, theme } from "./theme";
+import blinkAnimation from "./util/blinkAnimation";
 
 const GlobalStyles = createGlobalStyle`
     * {
@@ -96,13 +97,7 @@ const GlobalStyles = createGlobalStyle`
         display: inline-block;
 
         &--blinking {
-            opacity: 1;
-            animation: blink 1.5s linear infinite;
-            @keyframes blink {
-            0% { opacity:1; }
-            50% { opacity:0; }
-            100% { opacity:1; }
-            }
+            ${blinkAnimation}
         }
     }
 `;

@@ -1,6 +1,6 @@
 import { PresentionPropsType, PresenterKeyType, SponsorPropsType, SponsorKeyType, UpcomingEventsType, BarKeyType, MinutesUntilStartType } from '../types'
 
-export const minutesUntilStartType: MinutesUntilStartType = 24
+export const minutesUntilStartType: MinutesUntilStartType = 2
 
 export const presentions: PresentionPropsType[] = [
     {

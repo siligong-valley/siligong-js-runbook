@@ -1,6 +1,7 @@
 import React, { useEffect, useState, FC } from 'react'
 import moment from 'moment'
-import { styled } from '../theme'
+import { styled, theme, css } from '../theme'
+import blinkAnimation from '../util/blinkAnimation'
 
 let intervalId: number
 
@@ -8,10 +9,19 @@ const Section = styled.section`
     width: 100%;
 
     display: flex;
+    align-items: flex-end;
 `
 
-const Bold = styled.em(props => `
+const Bold = styled.em<{ isWarning: boolean }>(props => `
+    font-size: ${props.theme.fontSize[4]};
+    line-height: 1.1;
     font-weight: ${props.theme.fontWeight.bold};
+    color: ${props.isWarning ? props.theme.color.warning[0] : `currentColor`};
+    text-shadow: 0 0 5px ${props.isWarning ? props.theme.color.warning[0] : `currentColor`};
+    
+    ${props.isWarning && css`
+        ${blinkAnimation};
+    `};
 `)
 
 interface PropsType {
@@ -45,13 +55,14 @@ const Countdown: FC<PropsType> = ({
         }
     }
 
+    const isWarning = seconds < 120
     const secondsAsTime = moment().startOf('day')
         .seconds(seconds)
         .format('HH:mm:ss');
 
     return (
         <Section>
-            Starting in&nbsp;<Bold>{secondsAsTime}</Bold>
+            Starting in&nbsp;<Bold isWarning={isWarning}>{secondsAsTime}</Bold>
         </Section>
     )
 }

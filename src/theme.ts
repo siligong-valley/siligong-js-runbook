@@ -34,6 +34,9 @@ export const baseColor = {
     brown: [
         `hsla(31, 47%, 9%, 1)`
     ],
+    red: [
+        `#F44336`
+    ],
     white: [...black.reverse()],
     yellow: [
         `hsla(44, 93%, 53%, 1)`,
@@ -42,12 +45,16 @@ export const baseColor = {
 };
 
 const GLOW = `0 0 5px ${baseColor.white[3]}`
-const REDUCED_GLOW = `0 0 3px ${baseColor.white[3]}`
+const REDUCED_GLOW = `0 0 3px ${baseColor.white[4]}`
+
+const glow = [
+    GLOW,
+    REDUCED_GLOW
+]
 
 const theme = {
     boxShadow: [
-        GLOW,
-        REDUCED_GLOW
+        ...glow,
     ],
     color: {
         ...baseColor,
@@ -55,6 +62,9 @@ const theme = {
         background: [...baseColor.brown],
         focus: baseColor.black[4],
         text: [...baseColor.yellow],
+        warning: [
+            ...baseColor.red
+        ]
     },
     fontFamily: [
         `Courier, monospace`,
@@ -77,9 +87,8 @@ const theme = {
         m: 1.45,
     },
     textShadow: [
-        GLOW
+        ...glow,
     ]
-
 };
 
 type Theme = Readonly<typeof theme>;
