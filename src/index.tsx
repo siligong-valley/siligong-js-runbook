@@ -9,9 +9,7 @@ import ScanLines from './components/ScanLines'
 const App: FC = () => {
     const setNextHandler = useKeyPress(['ArrowRight']);
     const setPrevHandler = useKeyPress(['ArrowLeft']);
-    // FOR TESTING
-    // const [slide, setSlide] = useState(0)
-    const [slide, setSlide] = useState(1)
+    const [slide, setSlide] = useState(0)
     const prev = () => setSlide(currentSlide => {
         const isStart = currentSlide === 0
 
