@@ -40,7 +40,12 @@ export const baseColor = {
     ]
 };
 
+const GLOW = `0 0 5px ${baseColor.white[3]}`
+
 const theme = {
+    boxShadow: [
+        GLOW
+    ],
     color: {
         ...baseColor,
         active: baseColor.white[1],
@@ -69,7 +74,7 @@ const theme = {
         m: 1.45,
     },
     textShadow: [
-        `0 0 5px ${baseColor.white[3]}`
+        GLOW
     ]
 
 };
