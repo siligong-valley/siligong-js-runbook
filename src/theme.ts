@@ -36,15 +36,18 @@ export const baseColor = {
     ],
     white: [...black.reverse()],
     yellow: [
-        `hsla(44, 93%, 53%, 1)`
+        `hsla(44, 93%, 53%, 1)`,
+        `hsla(48, 100%, 33%, 1)`
     ]
 };
 
 const GLOW = `0 0 5px ${baseColor.white[3]}`
+const REDUCED_GLOW = `0 0 3px ${baseColor.white[3]}`
 
 const theme = {
     boxShadow: [
-        GLOW
+        GLOW,
+        REDUCED_GLOW
     ],
     color: {
         ...baseColor,

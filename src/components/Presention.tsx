@@ -3,6 +3,7 @@ import { styled, gridGutters } from "../theme";
 import { PresentionPropsType } from '../types';
 import presenters from '../data/presenters';
 import ListItemHeading from './ListItemHeading'
+import Deemph from './Deemph';
 
 const Li = styled.li(props => `
     display: flex;
@@ -28,11 +29,7 @@ const TextWrapper = styled.div(props => `
     align-items: flex-start;
 `)
 
-const PresenterName = styled.h2(props => `
-    font-size: ${props.theme.fontSize[1]};
-`)
-
-const Job = styled.p(props => `
+const Presenter = styled.h2(props => `
     font-size: ${props.theme.fontSize[1]};
 `)
 
@@ -48,12 +45,12 @@ const Presention: FC<PresentionPropsType> = ({
                 <ListItemHeading>
                     {title}
                 </ListItemHeading>
-                <PresenterName>
-                    by {presenters[presenter].name}
-                </PresenterName>
-                <Job>
-                    {presenters[presenter].job}
-                </Job>
+                <Presenter>
+                    by {presenters[presenter].name}<br />
+                    <Deemph>
+                        {presenters[presenter].job}
+                    </Deemph>
+                </Presenter>
             </TextWrapper>
         </Li>
     )

@@ -45,9 +45,10 @@ export default [
                 <List>
                     <ListItem>
                         order food &amp; drinks
-                    <Deemph>
+                        {' '}
+                        <Deemph>
                             previous meetup order: 8 pizzas, 3 salads (should of ordered double)
-                    </Deemph>
+                        </Deemph>
                     </ListItem>
                     <ListItem>
                         set up seating
