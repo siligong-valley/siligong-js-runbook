@@ -1,6 +1,8 @@
+# Update slides for a meetup
+Before running a meetup, update `src/data/meetup` 
+
+# Start presentation deck
+`yarn start`
+
 # TODO
-- scanlines, see ./components/ScanLines
-- text type animation (see codeSandbox)
-- blinking cursor @ end of slide text
-- selection animation on presenters slide
-- change meetup photo to siligong.JS logo?
+- `react-typist` is being used for typing animation. It is unreliable & looks like no longer maintained. Recommend changing library.
