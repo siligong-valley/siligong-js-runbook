@@ -1,6 +1,6 @@
 import React, { useEffect, useState, FC } from 'react'
 import moment from 'moment'
-import { styled, theme, css } from '../theme'
+import { styled, css } from '../theme'
 import blinkAnimation from '../util/blinkAnimation'
 
 let intervalId: number
