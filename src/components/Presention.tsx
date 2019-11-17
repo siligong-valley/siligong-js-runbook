@@ -15,8 +15,8 @@ const Li = styled.li(props => `
 `)
 
 const Portrait = styled.img`
-    width: ${gridGutters(4)};
-    height: ${gridGutters(4)};
+    width: ${gridGutters(7)};
+    height: ${gridGutters(7)};
 
     object-fit: cover;
 `
@@ -46,7 +46,7 @@ const Presention: FC<PresentionPropsType> = ({
                     {title}
                 </ListItemHeading>
                 <Presenter>
-                    by {presenters[presenter].name}<br />
+                    by {presenters[presenter].name},{' '}
                     <Deemph>
                         {presenters[presenter].job}
                     </Deemph>

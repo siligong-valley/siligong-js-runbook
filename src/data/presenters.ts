@@ -5,12 +5,12 @@ import { PresentersDataType, PresenterKeyType } from '../types'
 const presenters: PresentersDataType = {
     [PresenterKeyType.satvikSharma]: {
         name: `Satvik Sharma`,
-        job: 'Developer at Easy Agile',
+        job: 'developer at Easy Agile',
         portrait: satvikSharma,
     },
     [PresenterKeyType.chrisParton]: {
         name: `Chris Parton`,
-        job: 'Software engineer at Southern Mobile',
+        job: 'software engineer at Southern Mobile',
         portrait: chrisParton,
     }
 }
