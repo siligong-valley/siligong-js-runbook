@@ -32,11 +32,11 @@ const black = [
 export const baseColor = {
     black: [...black],
     brown: [
-        `#21170C`
+        `hsla(31, 47%, 9%, 1)`
     ],
     white: [...black.reverse()],
     yellow: [
-        `#F7B915`
+        `hsla(44, 93%, 53%, 1)`
     ]
 };
 
@@ -69,8 +69,7 @@ const theme = {
         m: 1.45,
     },
     textShadow: [
-        // `0 0 8px hsla(44, 93%, 53%, 0.5), 0 0 4px hsla(44, 93%, 53%, 0.5)`
-        `0 0 5px #C8C8C8`
+        `0 0 5px ${baseColor.white[3]}`
     ]
 
 };
