@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { styled, gridGutters } from "../theme";
-import { PresenterKeyType } from '../types';
+import { PresentionPropsType } from '../types';
 import presenters from '../data/presenters';
 import ListItemHeading from './ListItemHeading'
 
@@ -35,11 +35,6 @@ const PresenterName = styled.h2(props => `
 const Job = styled.p(props => `
     font-size: ${props.theme.fontSize[1]};
 `)
-
-export interface PresentionPropsType {
-    presenter: PresenterKeyType
-    title: string
-}
 
 const Presention: FC<PresentionPropsType> = ({
     presenter,

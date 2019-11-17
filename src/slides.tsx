@@ -5,31 +5,20 @@ import Body from './components/Body'
 import List from './components/List';
 import ListItem from './components/ListItem';
 import Deemph from './components/Deemph';
-import Presention, { PresentionPropsType } from './components/Presention';
-import { PresenterKeyType, SponsorKeyType, BarKeyType } from './types';
+import Presention from './components/Presention';
 import Countdown from './components/Countdown';
-import Sponsor, { SponsorPropsType } from './components/Sponsor';
+import Sponsor from './components/Sponsor';
 import Bar from './components/Bar';
 import { GridSquareRows } from './components/Grid';
 import Typist from "react-typist";
+import {
+    presentions,
+    sponsors,
+    upcomingEvents,
+    drinksLocation,
+    minutesUntilStartType
+} from './data/meetup'
 // note: custom styles for the typist cursor are included in GlobalStyles
-
-const presentions: PresentionPropsType[] = [
-    {
-        presenter: PresenterKeyType.chrisParton,
-        title: 'React Hooks'
-    },
-    {
-        presenter: PresenterKeyType.chrisParton,
-        title: 'React Hooks2'
-    }
-]
-
-const sponsors: SponsorPropsType[] = [
-    {
-        sponsor: SponsorKeyType.accelo
-    }
-]
 
 const Presentations = () => (
     <List>
@@ -81,7 +70,7 @@ export default [
         <Body>
             <Presentations />
             <GridSquareRows />
-            <Countdown startingSeconds={100} />
+            <Countdown startingSeconds={minutesUntilStartType * 60} />
         </Body>
     </Slide>,
     <Slide>
@@ -167,9 +156,7 @@ export default [
         <Body>
             <TypeText>
                 <List>
-                    {[
-                        `Agile Gong - Wed 9th Oct`,
-                    ].map(item => (
+                    {upcomingEvents.map(item => (
                         <ListItem key={item}>
                             {item}
                         </ListItem>
@@ -181,7 +168,7 @@ export default [
     <Slide>
         <Header heading="Come get a drink" />
         <Body>
-            <Bar bar={BarKeyType.humber} />
+            <Bar bar={drinksLocation} />
         </Body>
     </Slide>
 ]

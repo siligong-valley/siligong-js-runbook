@@ -1,3 +1,5 @@
+export type MinutesUntilStartType = number
+
 // presenter -----------------------------------
 export enum PresenterKeyType {
     satvikSharma = "satvikSharma",
@@ -14,6 +16,11 @@ export type PresentersDataType = {
     [propName in PresenterKeyType]: PresenterType
 }
 
+export interface PresentionPropsType {
+    presenter: PresenterKeyType
+    title: string
+}
+
 // sponsor -----------------------------------
 export enum SponsorKeyType {
     easyAgile = "easyAgile",
@@ -28,6 +35,13 @@ export interface SponsorType {
 export type SponsorsDataType = {
     [propName in SponsorKeyType]: SponsorType
 }
+
+export interface SponsorPropsType {
+    sponsor: SponsorKeyType
+}
+
+// upcoming events -----------------------------------
+export type UpcomingEventsType = string[]
 
 // bar -----------------------------------
 export enum BarKeyType {

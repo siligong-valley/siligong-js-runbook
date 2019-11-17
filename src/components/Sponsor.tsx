@@ -1,11 +1,7 @@
 import React, { FC } from 'react'
-import { SponsorKeyType } from '../types';
+import { SponsorPropsType } from '../types';
 import sponsors from '../data/sponsors';
 import Logo from './Logo';
-
-export interface SponsorPropsType {
-    sponsor: SponsorKeyType
-}
 
 const Sponsor: FC<SponsorPropsType> = ({
     sponsor
