@@ -62,6 +62,7 @@ const theme = {
         background: [...baseColor.brown],
         focus: baseColor.black[4],
         text: [...baseColor.yellow],
+        icon: [...baseColor.yellow],
         warning: [
             ...baseColor.red
         ]
