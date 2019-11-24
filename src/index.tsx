@@ -5,11 +5,15 @@ import GlobalStyles from './GlobalStyles';
 import slides from './slides'
 import useKeyPress from './hooks/useKeyPress';
 import ScanLines from './components/ScanLines'
+import toggleFullScreen from './util/toggleFullScreen'
+import HotKeys from './components/HotKeys'
 
 const App: FC = () => {
-    const setNextHandler = useKeyPress(['ArrowRight']);
-    const setPrevHandler = useKeyPress(['ArrowLeft']);
+    const setRightArrowHandler = useKeyPress(['ArrowRight']);
+    const setLeftArrowHandler = useKeyPress(['ArrowLeft']);
+    const setFHandler = useKeyPress(['f']);
     const [slide, setSlide] = useState(0)
+    const [isFullScreen, setFullScreen] = useState(false)
     const prev = () => setSlide(currentSlide => {
         const isStart = currentSlide === 0
 
@@ -25,14 +29,21 @@ const App: FC = () => {
             : currentSlide + 1
     })
 
-    setNextHandler(next)
-    setPrevHandler(prev)
+    setRightArrowHandler(next)
+    setLeftArrowHandler(prev)
+    setFHandler(() => {
+        toggleFullScreen()
+        setFullScreen(cur => !cur)
+    })
 
     return (
         <ThemeProvider theme={theme}>
             <>
                 <GlobalStyles />
                 {slides[slide]}
+                {!isFullScreen && (
+                    <HotKeys />
+                )}
                 <ScanLines />
             </>
         </ThemeProvider>
