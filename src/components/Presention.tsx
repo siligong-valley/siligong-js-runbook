@@ -1,16 +1,17 @@
 import React, { FC } from 'react'
 import { styled, gridGutters } from "../theme";
-import { PresentionPropsType } from '../types';
+import { PresentionPropsType, IconKeyType } from '../types';
 import presenters from '../data/presenters';
 import ListItemHeading from './ListItemHeading'
 import Deemph from './Deemph';
+import Icon from './Icon'
+import { GridGutterColumns, GridGutterRows } from './Grid';
 
 const Li = styled.li(props => `
     display: flex;
-    align-items: flex-start;
 
     :not(:last-child) {
-        margin-bottom: ${gridGutters(2)};
+        margin-bottom: ${gridGutters(3)};
     }
 `)
 
@@ -22,37 +23,60 @@ const Portrait = styled.img`
 `
 
 const TextWrapper = styled.div(props => `
-    padding-left: ${gridGutters(1)};
-
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    transform: translateY(-4px);
 `)
 
 const Presenter = styled.h2(props => `
     font-size: ${props.theme.fontSize[1]};
 `)
 
+const TwitterWrapper = styled.div(props => `
+    display: flex;
+    align-items: center;
+
+    font-size: ${props.theme.fontSize[1]};
+`);
+
 const Presention: FC<PresentionPropsType> = ({
-    presenter,
-    title
-}) => (
+    presenter: presenterKey,
+    title,
+}) => {
+    const presenter = presenters[presenterKey]
+
+    return (
         <Li>
             <Portrait
-                src={presenters[presenter].portrait}
-                alt={presenters[presenter].name} />
+                src={presenter.portrait}
+                alt={presenter.name} />
+            <GridGutterColumns />
             <TextWrapper>
                 <ListItemHeading>
                     {title}
                 </ListItemHeading>
+                <GridGutterRows />
                 <Presenter>
-                    by {presenters[presenter].name},{' '}
+                    by {presenter.name},{' '}
                     <Deemph>
-                        {presenters[presenter].job}
+                        {presenter.job}
                     </Deemph>
                 </Presenter>
+                <GridGutterRows amount={0.5} />
+                {!!presenter.twitter && (
+                    <TwitterWrapper>
+                        <Icon iconKey={IconKeyType.twitter} />
+                        <GridGutterColumns amount={0.5} />
+                        <Deemph>
+                            @{presenter.twitter}
+                        </Deemph>
+                    </TwitterWrapper>
+                )}
             </TextWrapper>
         </Li>
     )
+}
 
 export default Presention
