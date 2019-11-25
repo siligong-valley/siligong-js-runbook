@@ -71,7 +71,6 @@ const theme = {
         `Courier, monospace`,
     ],
     fontSize: [
-        // https://type-scale.com/
         "16px",
         "20px",
         "25px",
