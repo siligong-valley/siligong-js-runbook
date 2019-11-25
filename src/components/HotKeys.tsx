@@ -5,7 +5,7 @@ import Icon from './Icon'
 import { IconKeyType, IconSizeType } from '../types';
 import Deemph from './Deemph';
 
-const Wrapper = styled.p(props => `
+const Wrapper = styled.div(props => `
     position: absolute;
     bottom: ${gridSquares(1)};
     right: ${gridSquares(1)};
