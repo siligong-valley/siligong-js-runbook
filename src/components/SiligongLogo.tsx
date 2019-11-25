@@ -10,6 +10,8 @@ const Wrapper = styled.section(props => `
     justify-content: flex-end;
     align-items: flex-end;
 
+    font-size: ${props.theme.fontSize[1]};
+
     background: ${props.theme.color.yellow[0]};
     box-shadow: ${props.theme.boxShadow[0]};
 `)

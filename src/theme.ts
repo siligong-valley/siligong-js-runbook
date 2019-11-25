@@ -72,7 +72,6 @@ const theme = {
     ],
     fontSize: [
         // https://type-scale.com/
-        "12.8px",
         "16px",
         "20px",
         "25px",

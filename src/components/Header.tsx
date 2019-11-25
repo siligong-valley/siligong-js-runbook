@@ -13,7 +13,7 @@ const ParentWrapper = styled.header(props => `
 `)
 
 const HeadingWrapper = styled.div`
-    transform: translateY(11px);
+    transform: translateY(7px);
 `
 
 interface PropsType {
