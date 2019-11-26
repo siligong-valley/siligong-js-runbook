@@ -5,7 +5,6 @@ Before running a meetup, update `src/data/meetup`
 `yarn start`
 
 # TODO
-- add icons for community slide
 - add cocktail icon to drinks slide
 - add lines to favicon
 - change meetup.com photo to logo?
