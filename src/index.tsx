@@ -12,7 +12,8 @@ const App: FC = () => {
     const setRightArrowHandler = useKeyPress(['ArrowRight']);
     const setLeftArrowHandler = useKeyPress(['ArrowLeft']);
     const setFHandler = useKeyPress(['f']);
-    const [slide, setSlide] = useState(0)
+    // const [slide, setSlide] = useState(0)
+    const [slide, setSlide] = useState(9)
     const [isFullScreen, setFullScreen] = useState(false)
     const prev = () => setSlide(currentSlide => {
         const isStart = currentSlide === 0

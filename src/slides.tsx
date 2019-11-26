@@ -9,7 +9,7 @@ import Presention from './components/Presention';
 import Countdown from './components/Countdown';
 import Sponsor from './components/Sponsor';
 import Bar from './components/Bar';
-import { GridSquareRows } from './components/Grid';
+import { GridSquareRows, GridGutterColumns } from './components/Grid';
 import Typist from "react-typist";
 import {
     presentions,
@@ -18,6 +18,10 @@ import {
     drinksLocation,
     minutesUntilStartType
 } from './data/meetup'
+import Icon from './components/Icon';
+import community from './data/community';
+import { IconSizeType } from './types';
+import { CommunityList, CommunityListItem } from './components/Community'
 // note: custom styles for the typist cursor are included in GlobalStyles
 
 const Presentations = () => (
@@ -29,6 +33,8 @@ const Presentations = () => (
         ))}
     </List>
 )
+
+
 
 const typistProps = {
     avgTypingDelay: 0.1,
@@ -138,17 +144,15 @@ export default [
         <Header heading="Community" />
         <Body>
             <Typist avgTypingDelay={0.1} stdTypingDelay={0.1}>
-                <List>
-                    {[
-                        `siligong.slack.com`,
-                        `siligongvalley.com`,
-                        `meetup.com/siligongvalley`,
-                    ].map(item => (
-                        <ListItem key={item}>
-                            {item}
-                        </ListItem>
+                <CommunityList>
+                    {community.map(([iconKey, txt]) => (
+                        <CommunityListItem key={txt}>
+                            <Icon iconKey={iconKey} size={IconSizeType.xl} />
+                            <GridGutterColumns amount={1.5} />
+                            {txt}
+                        </CommunityListItem>
                     ))}
-                </List>
+                </CommunityList>
             </Typist>
         </Body>
     </Slide>,

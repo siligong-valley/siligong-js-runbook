@@ -5,9 +5,13 @@ export enum IconKeyType {
     location = "location",
     twitter = "twitter",
     keyboard = "keyboard",
+    meetup = "meetup",
+    slack = "slack",
+    siligong = "siligong"
 }
 
 export enum IconSizeType {
+    xl = "xl",
     l = "l",
     m = "m"
 }
