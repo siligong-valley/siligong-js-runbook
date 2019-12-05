@@ -4,7 +4,6 @@ import Header from './components/Header'
 import Body from './components/Body'
 import List from './components/List';
 import ListItem from './components/ListItem';
-import Deemph from './components/Deemph';
 import Presention from './components/Presention';
 import Countdown from './components/Countdown';
 import Sponsor from './components/Sponsor';
@@ -16,10 +15,11 @@ import {
     sponsors,
     upcomingEvents,
     drinksLocation,
-    minutesUntilStartType
+    minutesUntilStartType,
 } from './data/meetup'
 import Icon from './components/Icon';
 import community from './data/community';
+import setUpChecklist from './data/setUpChecklist'
 import { IconSizeType } from './types';
 import { CommunityList, CommunityListItem } from './components/Community'
 // note: custom styles for the typist cursor are included in GlobalStyles
@@ -49,25 +49,11 @@ export default [
         <Body>
             <TypeText>
                 <List>
-                    <ListItem>
-                        order food &amp; drinks
-                        {' '}
-                        <Deemph>
-                            previous meetup order: 8 pizzas, 3 salads (should of ordered double)
-                        </Deemph>
-                    </ListItem>
-                    <ListItem>
-                        set up seating
-                    </ListItem>
-                    <ListItem>
-                        set up display
-                    </ListItem>
-                    <ListItem>
-                        set up camera (for recording presentions)
-                    </ListItem>
-                    <ListItem>
-                        update slides (presenters, sponsors, upcoming events)
-                    </ListItem>
+                    {setUpChecklist.map(item => (
+                        <ListItem key={item}>
+                            {item}
+                        </ListItem>
+                    ))}
                 </List>
             </TypeText>
         </Body>
