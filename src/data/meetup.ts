@@ -1,30 +1,26 @@
 import { PresentionPropsType, PresenterKeyType, SponsorPropsType, SponsorKeyType, UpcomingEventsType, BarKeyType, MinutesUntilStartType } from '../types'
 
-export const minutesUntilStartType: MinutesUntilStartType = 30
+export const minutesUntilStartType: MinutesUntilStartType = 53
 
 export const presentions: PresentionPropsType[] = [
     {
-        presenter: PresenterKeyType.duToitMinnaar,
-        title: 'WebSockets in AWS'
+        presenter: PresenterKeyType.kurtHutten,
+        title: 'My adventures with the JS Abstract Syntax Tree'
     },
     {
-        presenter: PresenterKeyType.robOFarrell,
-        title: 'Phaser (game library)'
+        presenter: PresenterKeyType.phillipBoardman,
+        title: 'Working with JavaScript - The Other Stuff'
     },
-    {
-        presenter: PresenterKeyType.bradWoods,
-        title: 'LX - Learning Experience'
-    }
 ]
 
 export const sponsors: SponsorPropsType[] = [
     {
-        sponsor: SponsorKeyType.accelo
+        sponsor: SponsorKeyType.easyAgile
     }
 ]
 
 export const upcomingEvents: UpcomingEventsType = [
-    `Siligong Valley Summer Party - Thurs 5th Dec`
+    `Agile Gong - Wed 12th Feb`
 ]
 
 export const drinksLocation: BarKeyType = BarKeyType.humber

@@ -23,6 +23,8 @@ export enum PresenterKeyType {
     duToitMinnaar = "duToitMinnaar",
     robOFarrell = "robOFarrell",
     bradWoods = "bradWoods",
+    kurtHutten = "kurtHutten",
+    phillipBoardman = "phillipBoardman",
 }
 
 export interface PresenterType {
