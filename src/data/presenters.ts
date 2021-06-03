@@ -56,7 +56,7 @@ const presenters: PresentersDataType = {
     portrait: mattRowles,
   },
   [PresenterKeyType.hayleyTom]: {
-    name: "Matt Rowles",
+    name: "Hayley Tom",
     job: "Software Developer @ Easy Agile",
     portrait: haleyTom,
   },
